@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- this is the tab title and the default bookmark name and very informative too -->
+    <title>The Watership Down Inn</title>
+  <!-- <title>Fork & Pillow | Restaurant & Rooms</title> -->
+
+    <!-- set the little icon on the browser tab/page -->
+    <link rel="icon" type="image/png" href="images/Logos/logo_white_250x297.png">
+
+    <!-- this enables responsive styling by setting the following:
+    viewport = screen sizing
+    device-width = what the actual screen width is - not a formed value
+    initial-scale = 1 = 100%
+    maximum-scale = 1 = 100% = nothing bigger than this value -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- this is the link to the fonts to be used in the website - otherwise it 
+    relies on defaults and preloaded fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+    <!--  -->
+    <!-- use this first "respect the cascade" -->
+    <!-- this linked file tries to equalise the css styling across disparate browsers -->
+    <link rel="stylesheet" href="css/normalise.css">
+
+    <!--  -->
+    <!-- then the other css files -->
+    <!--  -->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"  href="css/bootstrap.css">
+    <!-- "min" means it has all the comments stripped -->
+    <!-- <link rel="stylesheet"  href="css/bootstrap.min.css"> -->  
+    <!--  -->
+
+    <!-- <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- this is for the font used as icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- finally, this is "my" styles -->
+    <link rel="stylesheet" href="/css/mystyles.css" />
+
+</head>
+<body>
+
+
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Watership Down Inn</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#openinghours">Opening Hours</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <!-- Special Offer Modal -->
+  <!-- <div
+    class="modal fade"
+    id="offerModal"
+    tabindex="-1"
+    aria-labelledby="offerModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title" id="offerModalLabel">🎉 Special Offer!</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Book now and get <strong>15% off</strong> on all rooms until September 30th!</p>
+          <p>Use code: <code>SUMMER15</code> on room booking form</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+<section id="hero" class="hero d-flex align-items-center justify-content-center text-center">
+  <div class="container h-100 d-flex flex-column justify-content-center">
+  
+    <div class="row flex-grow-1 p-3">
+      <div class="col-12">
+        <h1 class="mb-4 animated fadeInUp">Welcome to the <br> Watership Down Inn</h1>
+        <!-- <p class="lead">Your perfect getaway in the heart of Hampshire</p> -->
+      </div>
+    </div>
+
+    <div class="row mb-3">
+
+      <div class="col-12 d-flex justify-content-center gap-3 align-items-center">
+        <a href="https://web-bookings.hotels.uk.com/#/booking/49452/rooms/availability?k=7Bk5fE2GBLQfmbyhB0VbKgeeaNDk0NTI="
+           target="_blank"
+           rel="noopener"
+           class="btn btn-secondary btn-sm align-items-center">
+          <span class="align-middle">Book a Room</span>
+        </a>
+
+        <!-- this is the button to subscribe to our birthday club -->
+        <button type="button"
+        class="btn btn-secondary btn-sm align-items-center"
+            data-bs-toggle="modal"
+            data-bs-target="#modal_Subscription">
+            Birthday Club
+        </button>
+
+          <!-- this is the button to reserve a table -->
+        <button type="button" 
+            class="btn btn-secondary btn-sm align-items-center"
+            data-bs-toggle="modal" data-bs-target="#modal_TableBooking">
+            Book a Table
+        </button>
+
+                    <!-- this is the button to call us -->
+                     <a
+                        href="tel:+44 1256 892254"
+                        target="_blank"
+                        rel="noopener">
+                        <button type="button"
+                            class="btn btn-secondary btn-sm align-items-center"
+                            data-bs-toggle="modal"
+                            role="button">
+                            Call Us
+                        </button>
+                    </a>
+
+      </div>
+    </div> <!-- end div class="row mb-4">-->
+  </div>
+</section>
+
+<!-- ********************************************************** -->
+<!-- <section class="class_pallette" id="id_home_pallette">
+    <div class="container">
+        <div class="row"> -->
+            <!-- six dividers to visualise colours -->
+            <!-- <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #fff; color: #000; font-weight: bold;">Background</div> -->
+            <!-- <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #E5D4C0; color: #000; font-weight: bold;">Cream</div>            
+            <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #B69E82; color: #000; font-weight: bold;">Tan</div>
+            <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #8F8A7D; color: #000; font-weight: bold;">Taupe</div>
+            <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #979B8E; color: #000; font-weight: bold;">Duck Egg</div>
+            <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #5B7276; color: #000; font-weight: bold;">Teal</div>
+            <div class="col-2 d-flex align-items-center justify-content-center" style="background-color: #516264; color: #000; font-weight: bold;">Dark Teal</div>
+        </div>
+    </div>
+</section> -->
+<!-- ********************************************************** -->
+
+  <!-- Menu Carousel -->
+  <section id="top" class="container py-2">
+    <!-- <h2 class="text-center mb-4">About Us</h2> -->
+
+      <!-- this is the text below the section heading -->
+      <div class="col-md-12 text-center d-flex align-items-center">
+
+                <!-- this is a column spacer -->
+                <!-- <div class="col-2"></div> -->
+
+            <div class="col-md-12 text-center d-flex align-items-center">
+                We serve a wide range of drinks including wines, lagers, ciders, real ales & cocktails.
+                Our Lagers & Ciders include Estrella Galicia, Birra Moretti, Level Head IPA and Aspalls Cider with a range of bottled ciders & lagers.
+                Our Real Ales include "Flower Pots Brewery","Stonehenge Ales", "Triple FFF Brewery" & "Hopback Brewery" as regular offerings at the bar.
+                <br><br>
+                We have carefully selected some excellent wines to pair with our exquisite menu dishes and some quality house wines by the glass.                
+                <br><br>                
+                We are dog-friendly but request all dogs kept on a lead, indoors and outdoors.
+                <br>                      
+                We have pet rabbits in the garden who are someitmes able to be seen when not too shy, we ask you to be quiet and
+                respectful around them as not to scare them.
+
+                <br>      
+
+            </div>
+
+                <!-- this is a column spacer -->
+                <!-- <div class="col-2"></div> -->
+
+
+      </div>
+</section>
+
+  <hr />
+
+  <!-- Menu Carousel -->
+  <section id="menu" class="container py-4">
+    <h2 class="text-center mb-4">Our Menus</h2>
+
+      <!-- this is the text below the section heading -->
+      <div class="col-md-12 text-center d-flex align-items-center">
+
+          <!-- <h2 class="class_about_subheading">Welcome</h2> -->
+
+          Our menus are designed with families in mind, packed with fresh seasonal flavours and locally sourced ingredients, so every meal is wholesome, delicious, and perfect for sharing together.
+          <br><br>
+          We serve food all day Wednesday to Saturday from 12pm.  Our Lunch Menu is 12-6pm and the A la Carte is 12-3pm and 6-9pm.
+          We also have a "Bar Snacks" menu too, available all day.  See our opening hours for further details.
+          <br><br>
+          Please select the appropriate menu to see our current menus....
+
+          <br><br>
+
+          </div> <!-- <div class="col-md-5 text-center d-flex align-items-center class_section_text"> -->
+
+    <div id="menuCarousel" class="carousel slide carousel-dark">
+        <!-- disable autplay  -----  data-bs-ride="carousel">  -->
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <img src="images/Menus/Q4_2025/AlaCarte_Q42025.jpg"
+            class="img-fluid"
+            alt="Q4 A la Carte Menu" />
+            <!-- style="max-height:500px; object-fit:contain;" /> -->
+          <!-- <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Crab & Prawn Ravioli</h5>
+            <p>£18.95 = Salmon fillet, lemon butter, seasonal veggies.</p>
+          </div> -->
+        </div>
+        <div class="carousel-item text-center">
+          <img src="images/Menus/Q4_2025/Lunch_Q42025.png"
+            class="img-fluid"
+            alt="Q4 Lunch Menu" />
+            <!-- style="max-height:500px; object-fit:contain;" />           -->
+          <!-- <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Ribeye Steak</h5>
+            <p>£22.50 – 8oz ribeye, garlic herb butter, fries or mash.</p>
+          </div> -->
+        </div>
+        <div class="carousel-item text-center">
+          <img src="images/Menus/Q4_2025/Sunday_Q42025.png"
+            class="img-fluid"
+            alt="Q4 Sunday Menu" />
+            <!-- style="max-height:500px; object-fit:contain;" /> -->
+          <!-- <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+            <h5>Caesar Salad</h5>
+            <p>£9.50 – Romaine, parmesan, croutons, house Caesar dressing.</p>
+          </div> -->
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Rooms Carousel -->
+  <section id="rooms" class="bg-light py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Rooms</h2>
+
+        <!-- this is the text below the section heading -->
+        <div class="col-md-12 text-center d-flex align-items-center">
+            Our rooms are tastefully decorated incorporating the different elements of our property.  The Inn Rooms are in the older part of the main
+            building dating back 200 years in parts and incorporate king size beds and en-suite bathrooms.  The Garden Rooms are modern, spacious and
+            incorporate super king beds with walk-in showers in the en-suites. 
+            <br>
+            All rooms have televisions, tea/coffee making facilities and spring water.
+
+            <br><br>
+
+            Please select the appropriate room type to see our different options:
+
+            <br><br>
+
+        </div> <!-- <div class="col-md-12 text-center d-flex align-items-center class_section_text"> -->
+                
+      <div id="roomsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- to disable autplay  ----- remove data-bs-ride="carousel">  -->
+
+      <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="images/Rooms/Inn Rooms/20240918_174907.jpg"
+              class="img-fluid"
+              alt="Inn Room" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Inn Room</h5>
+              <p>King-size bed, en-suite with shower and access to private lounge</p>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="images/Rooms/Garden Rooms/20240913_124406.jpg"
+              class="img-fluid"
+              alt="Garden Room" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Garden Room</h5>
+              <p>Superking bed,  en-suite with twin sinks & walk-in shower, accessible room and garden views</p>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="images/Rooms/Garden Rooms/Room 7/IMG_0897.JPG"
+              class="img-fluid"   
+              alt="Family Room" />
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Family Room</h5>
+              <p>Superking bed and sofa, en-suite with twin sinks, shower & bath, accessible room and garden views</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#roomsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#roomsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+    <!-- Gallery Carousel -->
+  <section id="gallery" class="bg-light py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Gallery</h2>
+
+        <!-- this is the text below the section heading -->
+        <div class="col-md-12 text-center d-flex align-items-center">
+            Some of our favourite photos....... 
+            <br><br>
+
+            We are always looking for photos to add to our gallery, so if you have any 
+            photos of your time with us, please send them to us at enquiries@watershipdowninn.com
+
+            <br><br>
+
+        </div> <!-- <div class="col-md-12 text-center d-flex align-items-center class_section_text"> -->
+
+
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1750">
+        <!-- disable autplay  -----  remove data-bs-ride="carousel">  -->
+
+      <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="images/Food/Autumn 2024 Menu/CrabPrawnRavioli_20240911_191015.jpg"
+              class="img-fluid"
+              alt="Crab & Prawn Ravioli"
+            />
+            <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+             <!-- can remove the caption by using d-none with no size limit eg. d-md-block -->
+              <h5>Crab & Prawn Ravioli</h5>
+              <p>Autumn 2024 Menu</p>
+            </div>  
+          </div>          
+
+          <div class="carousel-item text-center">
+            <img src="images/Rooms/Garden Rooms/Room 7/IMG_0895.JPG"
+              class="img-fluid"
+              alt="Crab & Prawn Ravioli"
+            />
+            <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">              
+              <h5>Room 7 - Dandelion</h5>
+              <p>Sleeps Four with twin sinks & Shower over Bath</p>
+            </div>  
+          </div>
+
+          <div class="carousel-item text-center">
+            <img src="images/Rooms/InnRoom_002.jpg"
+                class="img-fluid"
+                alt="Crab & Prawn Ravioli"
+              />
+              <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">              
+                <h5>Room 1 - Bigwig</h5>
+                <p>King size bed, en-suite with walk-in shower</p>
+              </div>  
+          </div>    
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <hr />
+  
+<!-- -->
+<!-- this is the section for the background image at the top of the single page-->
+<!-- it has a height styling to ensure it appears at the -->
+<!-- top of the page when on a small screen and more importantly aligned -->
+<!-- to the middle of the image and the page -->
+<!-- -->
+<section class="" id="reviews">
+    <div class="container">
+        <div class="row">
+
+                <div>
+                    <div class="col d-none d-sm-block" style="float:left">
+                        <iframe
+                            id="QBOOKWIDGET_REVIEW_BADGE"
+                            src="https://secure.hotels.uk.com/review-aggregate-iframe-custom.php?HotelID=49452&bgcolor=ccc&textcolor=fff&linkcolor=ccc&token=e6446a755c3fc8027bd2c3693490411e"
+                            width="215"
+                            height="165"
+                            frameborder="0"
+                            allowtransparency="1">
+                        </iframe>
+                    </div>
+
+                     <div class="col d-none d-sm-block" style="float:right">
+                        <div id="TA_cdsratingsonlynarrow816" class="TA_cdsratingsonlynarrow">
+                            <ul id="T9efxZ" class="TA_links Yg6XdI57rrN">
+                                <li id="RakB5gHs2Qns" class="Q4fvbfsAce5k">
+                                    <a target="_blank" rel="noopener"
+                                        href="https://www.tripadvisor.co.uk/Restaurant_Review-g4273987-d1095698-Reviews-The_Watership_Down_Inn-Freefolk_Hampshire_England.html">
+                                        <img
+                                            src="https://www.tripadvisor.co.uk/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg"
+                                            alt="TripAdvisor"
+                                        >
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <script 
+                            async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=816&amp;locationId=1095698&amp;lang=en_UK&amp;border=true&amp;display_version=2" data-loadtrk onload="this.loadtrk=true">
+                        </script>
+                    </div>
+                </div> 
+
+            </div> <!-- end </div class="row class_section_home_content"> -->
+
+        </div> <!-- end class="row"> -->
+    </div> <!-- end class="container" -->
+</section> <!-- end section class="class_home_section" style="background-image: url(images/bg_3.jpg);" -->
+
+
+  <hr />
+
+    <!-- opening hours -->
+
+
+<section class="" id="openinghours">
+    <div class="container">
+        <!-- this is the row for the opening hours section -->
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-12">
+                <!-- there is some animation [in animate.css] on this text to make it a little jazzy -->
+                <!-- use one of these first animated or animated-fast or site-animated -->
+                <!-- then one the animation effects - see animate.css -->
+                <h2 class="">Opening Hours</h2>
+            </div>
+
+
+
+
+  <!-- <section id="openinghours" class="bg-light py-4"> -->
+    <!-- <div class="container"> -->
+        <!-- this is the row for the opening hours section -->
+        <!-- <div class="row align-items-center justify-content-center text-center">       -->
+      <!-- <h2 class="text-center mb-4">Opening Hours</h2> -->
+
+        <!-- this is the text below the section heading -->
+        <div class="col-12 text-center align-items-center">
+
+            These are our opening hours for the restaurant and bar 
+            <br><br>
+
+            Please bear this in mind when booking tables, rooms and just coming for a drink.
+
+        </div> <!-- <div class="col-md-12 text-center d-flex align-items-center class_section_text"> -->
+
+            <!-- this is a column spacer -->
+            <div class="col-1"></div>
+
+            <div class="col-md-10">
+
+
+<!-- Opening Hours by Menu (tabs) -->
+<section class="hours" aria-labelledby="hours-title">
+  <!-- <h2 id="hours-title">Opening Hours by Menu</h2> -->
+  <div class="tabs" role="tablist" aria-label="Menu Hours Tabs">
+    <button role="tab" aria-selected="true" aria-controls="panel-breakfast" id="tab-breakfast">Breakfast</button>
+    <button role="tab" aria-selected="false" aria-controls="panel-lunch" id="tab-lunch">Lunch</button>
+    <button role="tab" aria-selected="false" aria-controls="panel-alacarte" id="tab-alacarte">A la Carte</button>
+    <button role="tab" aria-selected="false" aria-controls="panel-bar" id="tab-bar">Drinks / Bar</button>
+    <button role="tab" aria-selected="false" aria-controls="panel-barsnacks" id="tab-barsnacks">Bar Snacks</button>
+  </div>
+
+  <!-- Breakfast -->
+  <div id="panel-breakfast" role="tabpanel" aria-labelledby="tab-breakfast">
+    <table class="hours-table" aria-label="Breakfast hours">
+      <thead><tr><th>Day</th><th>Opens</th><th>Closes</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td>    <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Tuesday</td>   <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Wednesday</td> <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Thursday</td>  <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Friday</td>    <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Saturday</td>  <td>08:30</td><td>09:30</td></tr>
+        <tr><td>Sunday</td>    <td>08:30</td><td>09:30</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Any non-resident breakfasts need to be booked in advance</p>
+  </div>
+
+  <!-- Lunch -->
+  <div id="panel-lunch" role="tabpanel" aria-labelledby="tab-lunch" hidden>
+    <table class="hours-table" aria-label="Lunch hours">
+      <thead><tr><th>Day</th><th>Open</th><th>Close</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td>    <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Tuesday</td>   <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Wednesday</td> <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Thursday</td>  <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Friday</td>    <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Saturday</td>  <td>12:00</td><td>18:00</td></tr>
+        <tr><td>Sunday</td>    <td>12:00</td><td>16:00</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Sunday Lunch has a separate menu</p>
+  </div>
+
+  <!-- Dinner -->
+  <div id="panel-alacarte" role="tabpanel" aria-labelledby="tab-alacarte" hidden>
+    <table class="hours-table" aria-label="A la Carte hours">
+      <thead><tr><th>Day</th><th>Open</th><th>Close</th><th>Open</th><th>Close</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td>    <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Tuesday</td>   <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Wednesday</td> <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Thursday</td>  <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Friday</td>    <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Saturday</td>  <td>12:00</td><td>15:00</td><td>18:00</td><td>21:00</td></tr>
+        <tr><td>Sunday</td>    <td>-----</td>-----<td>-----</td><td>-----</td><td>-----</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Last ticket 15 mins before close</p>
+  </div>
+
+  <!-- Drinks / Bar -->
+  <div id="panel-bar" role="tabpanel" aria-labelledby="tab-bar2" hidden>
+    <table class="hours-table" aria-label="Drinks and bar hours">
+      <thead><tr><th>Day</th><th>Open</th><th>Close</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td>    <td>11:00</td><td>18:00</td></tr>
+        <tr><td>Tuesday</td>   <td>11:00</td><td>18:00</td></tr>
+        <tr><td>Wednesday</td> <td>11:00</td><td>23:00</td></tr>
+        <tr><td>Thursday</td>  <td>11:00</td><td>23:00</td></tr>
+        <tr><td>Friday</td>    <td>11:00</td><td>23:00</td></tr>
+        <tr><td>Saturday</td>  <td>11:00</td><td>23:00</td></tr>
+        <tr><td>Sunday</td>    <td>11:00</td><td>18:00</td></tr>
+      </tbody>
+    </table>
+    <p class="note">As we are semi-rural, depending on circumstances we may close earlier than indicated above</p>
+  </div>
+
+  <!-- Takeaway -->
+  <div id="panel-barsnacks" role="tabpanel" aria-labelledby="tab-barsnacks" hidden>
+    <table class="hours-table" aria-label="Bar Snack hours">
+      <thead><tr><th>Day</th><th>Opens</th><th>Closes</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td>    <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Tuesday</td>   <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Wednesday</td> <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Thursday</td>  <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Friday</td>    <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Saturday</td>  <td>12:00</td><td>21:00</td></tr>
+        <tr><td>Sunday</td>    <td>-----</td><td>-----</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Bar Snacks Menu available on the tables</p>
+    <p class="note">Last ticket 15 mins before close</p>
+  </div>
+
+  <!-- <p class="timezone">All times local.</p> -->
+</section>
+
+<style>
+  :root { --bg:#fff; --text:#1b1b1b; --muted:#6b7280; --brand:#1f7a8c; --border:#e5e7eb; }
+  .hours { max-width: 900px; margin: 2rem auto; padding: 1rem; background: var(--bg); color: var(--text); }
+  .hours h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  .tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+  .tabs [role="tab"] { border: 1px solid var(--border); background:#f8fafc; color:#174a5b; padding:.5rem .75rem; border-radius:.5rem; cursor:pointer; transition:.2s; }
+  .tabs [role="tab"][aria-selected="true"] { background: var(--brand); color:#fff; border-color: var(--brand); }
+  .hours-table { width: 100%; border-collapse: collapse; }
+  .hours-table th, .hours-table td { padding:.65rem .75rem; border-bottom: 1px solid var(--border); text-align:left; }
+  .hours-table thead th { background:#f3f4f6; font-weight:600; }
+  .hours-table tbody tr:hover { background:#f9fafb; }
+  .note { margin-top:.5rem; color: var(--muted); font-size:.95rem; }
+  .timezone { margin-top: 1rem; color: var(--muted); font-size:.9rem; }
+  @media (max-width: 640px) {
+    .hours-table thead { display:none; }
+    .hours-table tr { display:grid; grid-template-columns:1fr 1fr; padding:.5rem 0; }
+    .hours-table td { border:none; }
+    .hours-table td:first-child { grid-column:1 / -1; font-weight:600; }
+  }
+</style>
+
+<script>
+  // Tabs: toggle panels
+  const tabs = document.querySelectorAll('.tabs [role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
+
+  // Helper: activate a tab and its panel
+  function activateTab(tab) {
+    // Update selected state and focus management
+    tabs.forEach(t => {
+      t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      t.setAttribute('tabindex', t === tab ? '0' : '-1'); // ARIA tabs pattern
+    });
+
+    // Show/hide panels
+    panels.forEach(p => (p.hidden = true));
+    const panelId = tab.getAttribute('aria-controls');
+    const panel = document.getElementById(panelId);
+    if (panel) panel.hidden = false;
+
+    // Move focus to the active tab for keyboard users
+    tab.focus();
+  }
+
+  // Initialize tabindex according to initial aria-selected
+  tabs.forEach(t => {
+    const selected = t.getAttribute('aria-selected') === 'true';
+    t.setAttribute('tabindex', selected ? '0' : '-1');
+  });
+
+  // Click support
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab));
+  });
+
+  // Keyboard support (Left/Right arrows)
+  document.querySelector('.tabs').addEventListener('keydown', (e) => {
+    const currentIndex = Array.from(tabs).findIndex(
+      t => t.getAttribute('aria-selected') === 'true'
+    );
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const delta = e.key === 'ArrowRight' ? 1 : -1;
+      const nextIndex = (currentIndex + delta + tabs.length) % tabs.length;
+      activateTab(tabs[nextIndex]);
+    }
+
+    // Optional: Home/End keys to jump to first/last tab
+    if (e.key === 'Home') {
+      e.preventDefault();
+      activateTab(tabs[0]);
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      activateTab(tabs[tabs.length - 1]);
+    }
+   });
+</script>
+
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark text-white text-center py-4">
+    <p class="mb-1">&copy; 2025 FlexiPubs (South) Ltd. All rights reserved.</p>
+    <p class="mb-1">Priory Lane, Freefolk, Whitchurch, Hampshire</p>
+    <p class="mb-0">Email: enquiries@watershipdowninn.com | Tel: 01256 892254</p>
+  </footer>
+
+  
+
+    <!--  -->
+    <!-- declare the bootstrap js -->
+    <!--  -->
+    <!-- the bundle version of bootstrap includes "popper" -->
+    <!-- "popper" is needed for fancy screentips -->
+    <script
+        src="js/bootstrap.bundle.js">
+    </script>
+    <!-- "min" means it has all the comments stripped -->
+
+  <!-- script for the modal popupo -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = new bootstrap.Modal(document.getElementById('offerModal'));
+      modal.show();
+    });
+  </script>
+
+    <!-- Core theme JS-->
+    <script src="js/navbar.js"></script>
+
+  <script src="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_9.1.0/js/mdb.umd.min.js">
+    
+  </script>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal_TableBooking" tabindex="-1" role="dialog" aria-labelledby="modal_SubscriptionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center d-flex justify-content-center">
+          <div class="modal-content">
+
+            <iframe src="https://cloudeu01.avenista.net/WatershipDownInn-WatershipDownInn/Bookings/watershipdowninn44fkd46?theme=kbl-drk2-v1" width="100%" height="454" frameborder="0"scrolling="yes"></iframe> 
+<!-- rc="https://cloudeu01.avenista.net/WatershipDownInn-WatershipDownInn/Bookings/watershipdowninn44fkd46?theme=kbl-drk2-v1" -->
+
+
+            <!-- <iframe src="https://booking.resdiary.com/widget/Standard/TheWatershipDownInn/32960" width="100%" height="800" frameborder="0"scrolling="yes"></iframe>  -->
+            
+<!-- <iframe src="https://cloudeu01.avenista.net/WatershipDownInn-WatershipDownInn/Bookings/watershipdowninn44fkd46?theme=kbl-clr-v1" frameborder="0" allowTransparency="true" width="500" height="454" scrolling="auto"></iframe> -->
+
+<!-- <iframe style="border: 0; border-radius: 10px;" src="https://cloudeu01.avenista.net/WatershipDownInn-WatershipDownInn/Bookings/watershipdowninn44fkd46?theme=kbl-clr-v1"
+width="320" height="454" frameborder="0" scrolling="no" allowfullscreen="no"></iframe> -->
+
+<!-- <div class="modal"> -->
+
+<!-- <iframe src="https://cloudeu01.avenista.net/WatershipDownInn-WatershipDownInn/Bookings/watershipdowninn44fkd46?theme=kbl-drk2-v1"
+  frameborder="0" 
+  allowTransparency="true"
+  width="320"
+  height="454"
+  scrolling="auto">
+</iframe> -->
+
+    </div>
+  </div>
+  </div>
+      <!-- END Modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal_Subscription" tabindex="-1" role="dialog" aria-labelledby="modal_SubscriptionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center d-flex justify-content-center">
+            <div class="modal-content">
+
+                <!-- ########################  -->
+                <!-- Begin Mailchimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px; color: black;}
+                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="https://watershipdowninn.us21.list-manage.com/subscribe/post?u=65a2f7e13485ab0a5408bdf16&amp;id=4c0d31b00a&amp;f_id=003251e1f0"
+                        method="post"
+                        id="mc-embedded-subscribe-form"
+                        name="mc-embedded-subscribe-form"
+                        class="validate"
+                        target="_blank"
+                        novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Subscribe to our Birthday Club</h2>
+                <div class="indicates-required">
+                    <span
+                        class="asterisk">*
+                    </span> indicates required
+                </div>
+                
+                <div class="mc-field-group">
+                    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-FNAME">First Name  <span class="asterisk">*</span></label>
+                    <input type="text" value="" name="FNAME" class="required" id="mce-FNAME" required>
+                    <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
+                </div>
+                <div class="mc-field-group">
+                    <label for="mce-LNAME">Last Name  <span class="asterisk">*</span></label>
+                    <input type="text" value="" name="LNAME" class="required" id="mce-LNAME" required>
+                    <span id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
+                </div>
+                <div class="mc-field-group size1of2">
+                    <label for="mce-PHONE">Phone Number  <span class="asterisk">*</span></label>
+                    <input type="text" name="PHONE" class="required" value="" id="mce-PHONE" required>
+                    <span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
+                </div>
+                <div class="mc-field-group size1of2">
+                    <label for="mce-BIRTHDAY-month">Birthday  <span class="asterisk">*</span></label>
+                    <div class="datefield">
+                        <span class="subfield monthfield">
+                            <input class="birthday required" type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month" required>
+                        </span> / 
+                        <span class="subfield dayfield">
+                            <input class="birthday required" type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day" required>
+                        </span> 
+                        <span class="small-meta nowrap">( mm / dd )</span>
+                    </div>
+                    <span id="mce-BIRTHDAY-HELPERTEXT" class="helper_text"></span>
+                </div>
+                <div hidden="true">
+                    <input type="hidden" name="tags" value="444885,647331">
+                </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_65a2f7e13485ab0a5408bdf16_4c0d31b00a" tabindex="-1" value=""></div>
+                <div class="clear">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+                </div>
+                </div>
+                <script
+                    type='text/javascript'
+                    src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+                </script>
+                <script
+                    type='text/javascript'>
+                        (function($)
+                            {
+                                window.fnames = new Array();
+                                window.ftypes = new Array();
+                                fnames[0]='EMAIL';
+                                ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';
+                                fnames[2]='LNAME';ftypes[2]='text';
+                                fnames[3]='ADDRESS';ftypes[3]='address';
+                                fnames[4]='PHONE';ftypes[4]='phone';
+                                fnames[5]='BIRTHDAY';
+                                ftypes[5]='birthday';
+                            }
+                        (jQuery));
+                    var $mcj = jQuery.noConflict(true);
+                </script>
+                <!--End mc_embed_signup-->
+                <!-- ########################  -->
+
+          </div>
+        </div>
+      </div>
+      <!-- END Modal -->
+
+</body>
+</html>

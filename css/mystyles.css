@@ -1,0 +1,94 @@
+html
+{
+  /* this is the height of the navbar to prevent overlay of content */
+    scroll-padding-top: 58px;
+}
+  
+
+/* Global */
+body {
+  /* font-family: "Segoe UI", sans-serif; */
+  /* line-height: 1.6; */
+
+
+    /* font-family: 'Bitter', serif; */
+    font-family: 'Bitter', serif;
+    background-color: #B69E82;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 16px;
+    line-height: 1.6;
+    color: hsl(0, 0%, 1%);
+}
+
+
+/* Hero Banner */
+.hero {
+
+  /* container for absolute child */
+  /* position: relative; */
+
+  background: url(/images/Outside/20250618_164316_tinypng.jpg) no-repeat center center;
+  background-size: cover;
+
+  /* height of hero */
+  height: 60vh;
+
+}
+
+
+
+.hero h1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-shadow: none;
+  font-size: 3rem;
+}
+
+/* Carousels */
+.carousel-item img
+{
+  height: 400px;
+
+  /* object-fit: cover; */
+}
+
+
+
+
+.carousel-caption {
+  /* position: absolute; */
+  /* bottom: 1.25rem; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  text-align: center;
+  /* justify-content: center; */
+  /* width: 90%; */
+   /* Optional: limits width on small screens */
+  /* max-width: 400px; */
+   /* Optional: prevents it from being too wide */
+  /* max-height: fit-content; */
+  /* z-index: 10; */
+  /* padding: 0; */
+  /* margin: 0; */
+  height: 100px;
+
+}
+
+
+
+.carousel-caption h5, p
+{
+color: #fff
+
+}
+
+
+/* Footer */
+footer p {
+  margin-bottom: 0.3rem;
+}
+
+
+
