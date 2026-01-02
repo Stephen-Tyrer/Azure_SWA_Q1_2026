@@ -49,7 +49,8 @@ body {
 /* Carousels */
 .carousel-item img
 {
-  height: 400px;
+  /* height: 400px; */
+  width: 100%;
 
   /* object-fit: cover; */
 }
@@ -58,21 +59,23 @@ body {
 
 
 .carousel-caption {
-  /* position: absolute; */
+
+  position: absolute;
   /* bottom: 1.25rem; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
-  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  /* text-align: center; */
   /* justify-content: center; */
   /* width: 90%; */
    /* Optional: limits width on small screens */
   /* max-width: 400px; */
+    width: 80%;
    /* Optional: prevents it from being too wide */
-  /* max-height: fit-content; */
+    max-height: fit-content;
   /* z-index: 10; */
   /* padding: 0; */
   /* margin: 0; */
-  height: 100px;
+  /* height: 100px; */
 
 }
 
