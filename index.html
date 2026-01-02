@@ -685,7 +685,7 @@
         </tbody>
       </table>
     </div>
-    <p class="note">Last ticket 15 mins before close</p>
+    <p class="note">Last order 15 mins before close</p>
   </div>
 
   <!-- Drinks / Bar -->
@@ -728,7 +728,7 @@
       </table>
     </div>
     <p class="note">Bar Snacks Menu available on the tables</p>
-    <p class="note">Last ticket 15 mins before close</p>
+    <p class="note">Last order 15 mins before close</p>
   </div>
 </section>
 
@@ -889,104 +889,6 @@
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </section>
-  <!-- <p class="timezone">All times local.</p> -->
-</section>
-
-<style>
-  :root { --bg:#fff; --text:#1b1b1b; --muted:#6b7280; --brand:#1f7a8c; --border:#e5e7eb; }
-  .hours { max-width: 900px; margin: 2rem auto; padding: 1rem; background: var(--bg); color: var(--text); }
-  .hours h2 { font-size: 1.6rem; margin-bottom: 1rem; }
-  .tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
-  .tabs [role="tab"] { border: 1px solid var(--border); background:#f8fafc; color:#174a5b; padding:.5rem .75rem; border-radius:.5rem; cursor:pointer; transition:.2s; }
-  .tabs [role="tab"][aria-selected="true"] { background: var(--brand); color:#fff; border-color: var(--brand); }
-  .hours-table { width: 100%; border-collapse: collapse; }
-  .hours-table th, .hours-table td { padding:.65rem .75rem; border-bottom: 1px solid var(--border); text-align:left; }
-  .hours-table thead th { background:#f3f4f6; font-weight:600; }
-  .hours-table tbody tr:hover { background:#f9fafb; }
-  .note { margin-top:.5rem; color: var(--muted); font-size:.95rem; }
-  .timezone { margin-top: 1rem; color: var(--muted); font-size:.9rem; }
-  @media (max-width: 640px) {
-    .hours-table thead { display:none; }
-    .hours-table tr { display:grid; grid-template-columns:1fr 1fr; padding:.5rem 0; }
-    .hours-table td { border:none; }
-    .hours-table td:first-child { grid-column:1 / -1; font-weight:600; }
-  }
-</style>
-
-<script>
-  // Tabs: toggle panels
-  const tabs = document.querySelectorAll('.tabs [role="tab"]');
-  const panels = document.querySelectorAll('[role="tabpanel"]');
-
-  // Helper: activate a tab and its panel
-  function activateTab(tab) {
-    // Update selected state and focus management
-    tabs.forEach(t => {
-      t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-      t.setAttribute('tabindex', t === tab ? '0' : '-1'); // ARIA tabs pattern
-    });
-
-    // Show/hide panels
-    panels.forEach(p => (p.hidden = true));
-    const panelId = tab.getAttribute('aria-controls');
-    const panel = document.getElementById(panelId);
-    if (panel) panel.hidden = false;
-
-    // Move focus to the active tab for keyboard users
-    tab.focus();
-  }
-
-  // Initialize tabindex according to initial aria-selected
-  tabs.forEach(t => {
-    const selected = t.getAttribute('aria-selected') === 'true';
-    t.setAttribute('tabindex', selected ? '0' : '-1');
-  });
-
-  // Click support
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => activateTab(tab));
-  });
-
-  // Keyboard support (Left/Right arrows)
-  document.querySelector('.tabs').addEventListener('keydown', (e) => {
-    const currentIndex = Array.from(tabs).findIndex(
-      t => t.getAttribute('aria-selected') === 'true'
-    );
-
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
-      e.preventDefault();
-      const delta = e.key === 'ArrowRight' ? 1 : -1;
-      const nextIndex = (currentIndex + delta + tabs.length) % tabs.length;
-      activateTab(tabs[nextIndex]);
-    }
-
-    // Optional: Home/End keys to jump to first/last tab
-    if (e.key === 'Home') {
-      e.preventDefault();
-      activateTab(tabs[0]);
-    }
-    if (e.key === 'End') {
-      e.preventDefault();
-      activateTab(tabs[tabs.length - 1]);
-    }
-   });
-</script>
 
 
   <!-- Footer -->
