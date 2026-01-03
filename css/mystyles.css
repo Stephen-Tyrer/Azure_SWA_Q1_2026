@@ -91,6 +91,8 @@ color: #fff
 /* Footer */
 footer p {
   margin-bottom: 0.3rem;
+  color: black;
+  text-align: center;
 }
 
 
