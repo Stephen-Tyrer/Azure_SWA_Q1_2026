@@ -138,7 +138,7 @@ Table container enables horizontal scroll on mid widths
   padding: 0.6rem 0.75rem;
   border-bottom: 2px solid var(--border);
   color: var(--muted);
-  background: #fafafa;
+  background: #00000025;
   position: sticky; top: 0; z-index: 1;
   font-size: 0.9rem;
 }
