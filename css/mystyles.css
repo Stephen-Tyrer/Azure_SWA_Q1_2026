@@ -173,6 +173,7 @@ overflow: hidden;
   .hours-table td {
     display: block;
     width: 100%;
+    padding: 50px;
   }
 
 /* Keep your existing row style */
