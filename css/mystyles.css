@@ -131,7 +131,7 @@ color: #fff
 .hours-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 420px; /* triggers horizontal scroll if viewport is narrower */
+  /* min-width: 420px; triggers horizontal scroll if viewport is narrower */
 }
 .hours-table thead th {
   text-align: center;
@@ -165,7 +165,7 @@ overflow: hidden;
 
 /* Small screens: stack table rows into cards using header labels */
 @media (max-width: 560px) {
-  .table-wrap { border: none; }
+  .table-wrap { border: none;}
   .hours-table thead { display: none; }
   .hours-table,
   .hours-table tbody,
@@ -173,7 +173,7 @@ overflow: hidden;
   .hours-table td {
     display: block;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
   }
 
 /* Keep your existing row style */
