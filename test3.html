@@ -1,367 +1,223 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tabbed Tables – Simple Demo</title>
+  <title>Portrait Bootstrap Carousel Gallery</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #121821;
-      --text: #e6edf3;
-      --muted: #9fb0c3;
-      --brand: #5ca9ff;
-      --brand-contrast: #0e61c9;
-      --border: #223043;
-      --radius: 14px;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      line-height: 1.45;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 48px auto;
-      padding: 0 16px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.02);
+    /* Portrait frame: adjust ratio if you prefer 2/3 or 4/5 */
+    .portrait-frame {
+      aspect-ratio: 3 / 4;      /* modern browsers */
+      width: 100%;
       overflow: hidden;
+      border-radius: 0.75rem;
+      background: #f1f3f5;      /* neutral placeholder background */
     }
-
-    .card-header {
-      padding: 18px 18px 0 18px;
-    }
-
-    .title {
-      margin: 0 0 6px 0;
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-
-    .subtitle {
-      margin: 0 0 14px 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* Tabs */
-    .tabs {
-      display: flex;
-      gap: 8px;
-      padding: 0 10px;
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      scrollbar-width: thin;
-    }
-
-    .tab {
-      appearance: none;
-      background: transparent;
-      border: 0;
-      color: var(--muted);
-      padding: 10px 14px;
-      border-radius: 10px 10px 0 0;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      position: relative;
-    }
-
-    .tab[aria-selected="true"] {
-      color: var(--text);
-      background: linear-gradient(to top, transparent 0%, rgba(255,255,255,0.03) 100%);
-    }
-
-    .tab[aria-selected="true"]::after {
-      content: "";
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      bottom: -1px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--brand), var(--brand-contrast));
-      border-radius: 3px 3px 0 0;
-    }
-
-    .tab:focus-visible {
-      outline: 2px solid var(--brand);
-      outline-offset: 2px;
-      border-radius: 8px;
-    }
-
-    /* Panels */
-    .panel {
-      display: none;
-      padding: 18px;
-    }
-    .panel[aria-hidden="false"] {
+    .portrait-frame > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;        /* fill frame without distortion, crop if needed */
       display: block;
+      transition: transform .35s ease;
+    }
+    .portrait-frame:hover > img {
+      transform: scale(1.03);
     }
 
-    /* Table */
-    .table-wrap {
-      width: 100%;
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+    /* Nice lift on cards */
+    .gallery-card {
+      transition: box-shadow .25s ease, transform .25s ease;
+    }
+    .gallery-card:hover {
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
+      transform: translateY(-2px);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 520px;
-      background: #0e141c;
-    }
-
-    thead th {
-      background: #0f1824;
-      color: #d9e6f2;
-      text-align: left;
-      font-size: 0.9rem;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 12px;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-
-    tbody td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #1b293a;
-      color: #d0d8e1;
-    }
-
-    tbody tr:hover {
-      background: rgba(92, 169, 255, 0.06);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      background: #0d2238;
-      color: #8fd0ff;
-      border: 1px solid #21486d;
-    }
-
-    .footer-note {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 12px;
+    /* Easier-to-tap indicators */
+    .carousel-indicators [data-bs-target] {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card" aria-labelledby="page-title">
-      <header class="card-header">
-        <h1 id="page-title" class="title">Tabbed Tables</h1>
-        <p class="subtitle">Switch between tabs to view different datasets.</p>
 
-        <div
-          class="tabs"
-          role="tablist"
-          aria-label="Datasets"
-          id="tablist"
-        >
-          <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">
-            Products
-          </button>
-          <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">
-            Orders
-          </button>
-          <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">
-            Customers
-          </button>
-        </div>
-      </header>
+<header class="py-5 bg-light border-bottom">
+  <div class="container">
+    <h1 class="display-6 mb-1">Portrait Carousel Gallery</h1>
+    <p class="text-muted mb-0">1 item per slide on mobile • 2 per slide on larger screens</p>
+  </div>
+</header>
 
-      <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" aria-hidden="false">
-        <div class="table-wrap" role="region" aria-label="Products table" tabindex="0">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">SKU</th>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Stock</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>PROD-001</td>
-                <td>Wireless Mouse</td>
-                <td>Accessories</td>
-                <td>£19.99</td>
-                <td><span class="badge">In Stock</span></td>
-              </tr>
-              <tr>
-                <td>PROD-002</td>
-                <td>Mechanical Keyboard</td>
-                <td>Accessories</td>
-                <td>£79.00</td>
-                <td><span class="badge">Low</span></td>
-              </tr>
-              <tr>
-                <td>PROD-003</td>
-                <td>27" 4K Monitor</td>
-                <td>Displays</td>
-                <td>£289.99</td>
-                <td><span class="badge">Backorder</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="footer-note">Tip: Use Left/Right arrow keys to switch tabs.</p>
+<main class="py-5">
+  <div class="container">
+
+    <div id="portraitCarousel"
+         class="carousel slide"
+         data-bs-ride="carousel"
+         data-bs-touch="true"
+         data-bs-interval="6000"
+         data-bs-pause="hover"
+         aria-label="Portrait carousel gallery">
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portraitCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#portraitCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#portraitCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
-      <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" aria-hidden="true">
-        <div class="table-wrap" role="region" aria-label="Orders table" tabindex="0">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Order #</th>
-                <th scope="col">Customer</th>
-                <th scope="col">Items</th>
-                <th scope="col">Total</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>100234</td>
-                <td>Alex Carter</td>
-                <td>3</td>
-                <td>£118.99</td>
-                <td><span class="badge">Shipped</span></td>
-              </tr>
-              <tr>
-                <td>100235</td>
-                <td>Sophie Lee</td>
-                <td>1</td>
-                <td>£289.99</td>
-                <td><span class="badge">Processing</span></td>
-              </tr>
-              <tr>
-                <td>100236</td>
-                <td>Chris Young</td>
-                <td>2</td>
-                <td>£98.99</td>
-                <td><span class="badge">Pending</span></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <!-- 1 per slide on xs, 2 per slide on ≥sm -->
+          <div class="row g-4 row-cols-1 row-cols-sm-2">
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Alex in natural light"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Alex</h6>
+                  <p class="card-text small text-muted mb-0">Natural light, outdoor</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Sam in studio soft light"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Sam</h6>
+                  <p class="card-text small text-muted mb-0">Studio, softbox</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" aria-hidden="true">
-        <div class="table-wrap" role="region" aria-label="Customers table" tabindex="0">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Customer</th>
-                <th scope="col">Email</th>
-                <th scope="col">Country</th>
-                <th scope="col">Orders</th>
-                <th scope="col">LTV</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Alex Carter</td>
-                <td>alex.carter@example.com</td>
-                <td>UK</td>
-                <td>5</td>
-                <td>£542.10</td>
-              </tr>
-              <tr>
-                <td>Sophie Lee</td>
-                <td>sophie.lee@example.com</td>
-                <td>UK</td>
-                <td>2</td>
-                <td>£314.70</td>
-              </tr>
-              <tr>
-                <td>Chris Young</td>
-                <td>chris.young@example.com</td>
-                <td>IE</td>
-                <td>3</td>
-                <td>£267.40</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4 row-cols-1 row-cols-sm-2">
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Jordan candid on a street"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Jordan</h6>
+                  <p class="card-text small text-muted mb-0">Candid, street</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Taylor in editorial look"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Taylor</h6>
+                  <p class="card-text small text-muted mb-0">Editorial look</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <script>
-    // Basic accessible tabs logic
-    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4 row-cols-1 row-cols-sm-2">
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Morgan in monochrome mood"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Morgan</h6>
+                  <p class="card-text small text-muted mb-0">Monochrome mood</p>
+                </div>
+              </div>
+            </div>
 
-    function activateTab(tab) {
-      const targetId = tab.getAttribute('aria-controls');
-      tabs.forEach(t => {
-        const isSelected = t === tab;
-        t.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-        t.tabIndex = isSelected ? 0 : -1;
-      });
-      panels.forEach(p => {
-        p.setAttribute('aria-hidden', p.id === targetId ? 'false' : 'true');
-      });
-      tab.focus();
-    }
+            <div class="col">
+              <div class="card h-100 gallery-card">
+                <div class="portrait-frame">
+                  <img
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=900&auto=format&fit=crop"
+                    alt="Portrait of Jamie classic style"
+                    loading="lazy"
+                    width="900" height="1200"
+                  />
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Jamie</h6>
+                  <p class="card-text small text-muted mb-0">Classic style</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    tabs.forEach((tab, idx) => {
-      tab.addEventListener('click', () => activateTab(tab));
+      </div><!-- /.carousel-inner -->
 
-      tab.addEventListener('keydown', (e) => {
-        const key = e.key;
-        // Arrow navigation: Left/Right to switch tabs
-        if (key === 'ArrowRight' || key === 'ArrowLeft') {
-          e.preventDefault();
-          const dir = key === 'ArrowRight' ? 1 : -1;
-          const nextIndex = (idx + dir + tabs.length) % tabs.length;
-          activateTab(tabs[nextIndex]);
-        }
-        // Home / End jump
-        if (key === 'Home') {
-          e.preventDefault();
-          activateTab(tabs[0]);
-        }
-        if (key === 'End') {
-          e.preventDefault();
-          activateTab(tabs[tabs.length - 1]);
-        }
-      });
-    });
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#portraitCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portraitCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
 
-    // Optional: sync hash (#panel-2) to open specific tab via URL
-    window.addEventListener('hashchange', syncHashToTab);
-    function syncHashToTab() {
-      const id = location.hash.replace('#', '');
-      const tab = tabs.find(t => t.getAttribute('aria-controls') === id);
-      if (tab) activateTab(tab);
-    }
-    // On load
-    syncHashToTab();
-  </script>
+  </div>
+</main>
+
+<!-- Bootstrap Bundle (JS + Popper) -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
 </body>
 </html>
 ``

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- this is the tab title and the default bookmark name and very informative too -->
     <title>The Watership Down Inn | Restaurant & Rooms</title>
@@ -322,15 +322,77 @@
   </section>
 
   <hr />
-
-    <!-- Gallery Carousel -->
-  <section id="gallery" class="bg-light py-4">
+  
+  <!-- Restaurant Carousel -->
+  <section id="restaurant" class="bg-light py-4">
     <div class="container">
-      <h2 class="text-center mb-4">Gallery</h2>
+      <h2 class="text-center mb-4">Our Restaurant</h2>
 
         <!-- this is the text below the section heading -->
         <div class="col-md-12 text-center d-flex align-items-center">
-            Some of our favourite photos....... 
+            Our restaurant is cosy and welcoming with a roaring fire in the winter and decoaration of the Watership Down book amongst other items.
+            
+            We also have a separate airy conservatory.
+ 
+            <br><br>
+
+        </div> <!-- <div class="col-md-12 text-center d-flex align-items-center class_section_text"> -->
+                
+      <div id="restaurantCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- to disable autplay  ----- remove data-bs-ride="carousel">  -->
+
+      <div class="carousel-inner">
+          <div class="carousel-item active text-center">
+            <img src="images/Restaurant/IMG_4426_2500x1667_35.JPG"
+              class="img-fluid"
+              alt="Inn Room" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Restaurant</h5>
+              <p>Our autumnal decorations</p>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="images/Restaurant/IMG_4427_2500x1667_35.JPG"
+              class="img-fluid"
+              alt="Garden Room" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Garden Room</h5>
+              <p>Superking bed,  en-suite with twin sinks & walk-in shower, accessible room and garden views</p>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="images/Rooms/Garden Rooms/Room 7/IMG_0897_2500x1666_50.JPG"
+              class="img-fluid"   
+              alt="Family Room" />
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Family Room</h5>
+              <p>Superking bed and sofa, en-suite with twin sinks, shower & bath, accessible room and garden views</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <hr />  
+
+  <!-- Gallery Carousel -->
+  <section id="gallery" class="bg-light py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Gallery - New</h2>
+
+        <!-- this is the text below the section heading -->
+        <div class="col-md-12 text-center d-flex align-items-center">
+            Some of our favourite photos....... TEST
             <br><br>
 
             We are always looking for photos to add to our gallery, so if you have any 
@@ -339,61 +401,41 @@
             <br><br>
 
         </div> <!-- <div class="col-md-12 text-center d-flex align-items-center class_section_text"> -->
-
-
+                
       <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- disable autoplay  -----  remove data-bs-ride="carousel">  -->
+      <!-- to disable autoplay  ----- remove data-bs-ride="carousel">  -->
 
       <div class="carousel-inner">
           <div class="carousel-item active text-center">
-            <img src="images/Restaurant/IMG_4426_2500x1667_50.jpg"
+            <img src="images/Outside/IMG_4441_352x500_35.JPG"
               class="img-fluid"
-              alt="Restaurant Interior"
-            />
-            <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
+              style="max-width: 35%;"
+              alt="Inn Room" />
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
+              style="max-width: 35%;">
+              <h5>Restaurant......this one??????</h5>
+              <p>Our autumnal decorations</p>
+            </div>
+          </div>
+          <div class="carousel-item text-center">
+            <img src="images/Restaurant/IMG_4427_2500x1667_35.JPG"
+              class="img-fluid"
+              alt="Garden Room" />
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-             <!-- can remove the caption by using d-none with no size limit eg. d-md-block -->
-              <h5>Restaurant</h5>
-              <p>Autumn Glow</p>
-            </div>  
-          </div>          
-
-          <div class="carousel-item text-center">
-            <img src="images/Rooms/Garden Rooms/Room 7/IMG_0895_2500x1666_50.jpg"
-              class="img-fluid"
-              alt="Crab & Prawn Ravioli"
-            />
-            <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">              
-              <h5>Room 7 - Dandelion</h5>
-              <p>Sleeps Four with twin sinks & Shower over Bath</p>
-            </div>  
+              <h5>Garden Room</h5>
+              <p>Superking bed,  en-suite with twin sinks & walk-in shower, accessible room and garden views</p>
+            </div>
           </div>
-
           <div class="carousel-item text-center">
-            <img src="images/Outside/20240911_085752_2221x1666_50.jpg"
-                class="img-fluid"
-                alt="Crab & Prawn Ravioli"
-              />
-              <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">              
-                <h5>Pub Garden</h5>
-                <p>Rabbits & Owls included</p>
-              </div>  
+            <img src="images/Rooms/Garden Rooms/Room 7/IMG_0897_2500x1666_50.JPG"
+              class="img-fluid"   
+              alt="Family Room" />
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Family Room</h5>
+              <p>Superking bed and sofa, en-suite with twin sinks, shower & bath, accessible room and garden views</p>
+            </div>
           </div>
-
-          <div class="carousel-item text-center">
-            <img src="images/Drinks/20260313_184419_1250x1666_50.jpg"
-                class="img-fluid"
-                alt="Seasonal Ales"
-              />
-              <!-- <div class="carousel-caption rounded bg-dark bg-opacity-10 d-md-block"> -->
-              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">              
-                <h5>Stonehenge Ales - Sign of Spring</h5>
-                <p></p>
-              </div>  
-          </div>
-
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
           <span class="visually-hidden">Previous</span>
@@ -402,13 +444,57 @@
           <span class="carousel-control-next-icon"></span>
           <span class="visually-hidden">Next</span>
         </button>
+
       </div>
     </div>
   </section>
 
-
   <hr />
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 <!-- -->
 <!-- this is the section for the background image at the top of the single page-->
 <!-- it has a height styling to ensure it appears at the -->
@@ -479,8 +565,7 @@
         These are our opening hours for the restaurant and bar.
         <br><br>
         Please bear this in mind when booking tables, rooms, or just coming for a drink.
-
-        Updated 16-Mar @ 18:15
+        
         <br><br>
       </div>
 
