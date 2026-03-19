@@ -406,13 +406,19 @@
       <!-- to disable autoplay  ----- remove data-bs-ride="carousel">  -->
 
       <div class="carousel-inner">
+ 
+
+        <!-- this is a column spacer -->
+        <div class="col-2"></div>
+
+        <div class="col-8" style="background-color: aqua;">
+
+
           <div class="carousel-item active text-center">
             <img src="images/Outside/IMG_4441_352x500_35.JPG"
               class="img-fluid"
-              style="max-width: 35%;"
               alt="Inn Room" />
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
-              style="max-width: 35%;">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
               <h5>Restaurant......this one??????</h5>
               <p>Our autumnal decorations</p>
             </div>
@@ -435,6 +441,13 @@
               <p>Superking bed and sofa, en-suite with twin sinks, shower & bath, accessible room and garden views</p>
             </div>
           </div>
+
+        </div> <!-- end <div class="col-8"> -->
+
+        <!-- this is a column spacer -->
+        <div class="col-2"></div>
+
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
@@ -451,7 +464,32 @@
 
   <hr />
 
+  <div id="portraitCarousel" class="carousel slide" data-bs-ride="carousel">
 
+    <div class="portrait-frame carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/Outside/IMG_4441_352x500_35.JPG" class="d-block mx-auto">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+              <h5>Restaurant......this one??????</h5>
+              <p>Our autumnal decorations</p>
+          </div>
+      </div>
+      <div class="portrait-frame carousel-item">
+        <img src="https://picsum.photos/500/900?random=2" class="d-block mx-auto">
+      </div>
+      <div class="portrait-frame carousel-item">
+        <img src="https://picsum.photos/500/900?random=3" class="d-block mx-auto">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#portraitCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#portraitCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
 
 
 
