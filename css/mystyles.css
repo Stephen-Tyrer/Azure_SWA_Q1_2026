@@ -230,8 +230,8 @@ overflow: hidden;
 
 
   /* Make the controls overlay the portrait frame evenly */
-  #portraitCarousel .carousel-control-prev,
-  #portraitCarousel .carousel-control-next {
+  #portraitGallery .carousel-control-prev,
+  #portraitGallery .carousel-control-next {
     width: 50%;                  /* equal halves */
     margin: 0;
     opacity: 1;                  /* keep visible for hover/background only */
@@ -239,29 +239,29 @@ overflow: hidden;
   }
 
   /* Keep icons near the edges */
-  #portraitCarousel .carousel-control-prev {
+  #portraitGallery .carousel-control-prev {
     justify-content: flex-start;
     padding-left: 10px;
   }
-  #portraitCarousel .carousel-control-next {
+  #portraitGallery .carousel-control-next {
     justify-content: flex-end;
     padding-right: 10px;
   }
 
   /* Icon sizing/visibility */
-  #portraitCarousel .carousel-control-prev-icon,
-  #portraitCarousel .carousel-control-next-icon {
+  #portraitGallery .carousel-control-prev-icon,
+  #portraitGallery .carousel-control-next-icon {
     width: 2rem;
     height: 2rem;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
   }
 
   /* Optional hover feedback */
-  #portraitCarousel .carousel-control-prev:hover {
+  #portraitGallery .carousel-control-prev:hover {
     background: linear-gradient(to right, rgba(0,0,0,0.15), transparent);
   }
   
-  #portraitCarousel .carousel-control-next:hover {
+  #portraitGallery .carousel-control-next:hover {
     background: linear-gradient(to left, rgba(0,0,0,0.15), transparent);
   }
 
