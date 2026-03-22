@@ -122,7 +122,7 @@ color: #fff
 /* Table container enables horizontal scroll on mid widths */
 .table-wrap {
   width: 100%;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -130,7 +130,7 @@ color: #fff
 
 
   max-height: 420px;               /* set a height to enable vertical scrolling */
-  /* overflow: auto;                  scrolling container for sticky header/column */
+  overflow: auto;               /* scrolling container for sticky header/column */
   /* border: 1px solid #e5e7eb; */
   /* border-radius: 8px; */
   /* background: #fff; */
