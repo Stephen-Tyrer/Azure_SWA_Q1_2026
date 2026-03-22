@@ -125,6 +125,7 @@ color: #fff
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background: #fff;
+  margin-top: 1rem; /* adjust as needed */
 }
 
 /* Base table styles */
