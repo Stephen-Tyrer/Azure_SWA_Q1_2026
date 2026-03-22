@@ -113,9 +113,11 @@ color: #fff
   color: var(--accent-600);
   border-color: #dbeafe;
 }
-.hours [role="tabpanel"] {
+
+/* .hours [role="tabpanel"] {
   padding: 1rem 0;
-}
+
+} */
 
 /* Table container enables horizontal scroll on mid widths */
 .table-wrap {
@@ -125,7 +127,6 @@ color: #fff
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background: #fff;
-  margin-top: 1rem; /* adjust as needed */
 }
 
 /* Base table styles */
@@ -266,6 +267,67 @@ overflow: hidden;
   #portraitGallery .carousel-control-next:hover {
     background: linear-gradient(to left, rgba(0,0,0,0.15), transparent);
   }
+
+/* ===== Sticky tabs (buttons) ===== */
+#section_openinghours .tabs {
+  position: sticky;
+  --tabs-offset: 0px; /* set to your fixed header height if you have one, e.g., 64px */
+  top: var(--tabs-offset);
+  z-index: 20;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(1.2) blur(4px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 0;
+}
+#section_openinghours .tabs button {
+  font: 600 0.95rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+#section_openinghours .tabs button:hover { background: #f1f5f9; }
+#section_openinghours .tabs button[aria-selected="true"] {
+  background: #0ea5e9; border-color: #0284c7; color: #fff;
+}
+
+/* ===== Table container & sticky header ===== */
+#section_openinghours .table-wrap {
+  max-height: 420px;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+#section_openinghours .hours-table {
+  border-collapse: separate; border-spacing: 0;
+  width: 100%; min-width: 560px; background: #fff;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+#section_openinghours .hours-table th,
+#section_openinghours .hours-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  white-space: nowrap;
+}
+#section_openinghours .hours-table thead th {
+  position: sticky; top: 0; z-index: 3; background: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+/* ===== Optional: sticky first column (“Day”) ===== */
+#section_openinghours .hours-table td:first-child,
+#section_openinghours .hours-table th:first-child {
+  position: sticky; left: 0; z-index: 2; background: #fff;
+
+
+
+
 
 
 /* Footer */
